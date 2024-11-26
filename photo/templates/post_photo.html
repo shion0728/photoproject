@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Post{% endblock %}
+
+        {% block contents %}
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col offset-2">
+                    <form method="POST"
+                    enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <th>ゲームカテゴリ</th>
+                        <td>{{ form.category }}</td>
+                    </tr>
+                    <tr>
+                        <th>ゲームタイトル</th>
+                        <td>{{ form.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>共有情報</th>
+                        
+                        <td>{{ form.comment }}</td>
+                    </tr>
+                    
+                    <tr>
+                        <th>サンプル画像1</th>
+                        <td class="user_image">
+                            {{ form.image1 }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>サンプル画像2</th>
+                        <td>{{ form.image2 }}</td>
+                    </tr>
+                </table>
+                <hr>
+                <button type="submit">ゲームバカどもに共有する</button>
+                </form>
+            </dv>
+        </dv>
+    </dv>
+    {% endblock %}
